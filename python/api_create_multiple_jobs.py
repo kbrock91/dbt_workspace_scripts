@@ -48,20 +48,22 @@ run_status_map = { # dbt run statuses are encoded as integers. This map provides
 
 req_auth_header = {'Authorization': f'Token {api_key}','Content-Type': 'application/json'}
 req_job_url = f'{api_base}/api/v2/accounts/{account_id}/jobs'
-schemas = ['schema1','schema2']
+
+schemas = ['schema1','schema2'] #replace with dynamically curated list of schemas 
+
 for schema in schemas:
   data = {'id': None,
           'account_id': account_id,
           'project_id': project_id,
           'environment_id': environment_id,
-          'name': 'Test Job 3 - Created from API',
+          'name': f'Hourly Job for Customer {schema}',
           'dbt_version': None,
-          'execute_steps': ['dbt compile',f'dbt run --select tag:{schema}'],
+          'execute_steps': ['dbt compile',f'dbt run --select tag:{schema}'], #determine dbt commands to run
           'state': 1,
           'triggers': {'github_webhook': False, 'git_provider_webhook': False, 'custom_branch_only': False, 'schedule': True},
           'settings': {'threads': 4, 'target_name': 'pkearns_test'},
-              "schedule": {
-                  "date": {"type": "every_day"},
+              "schedule": { #update schedule based on required cadence
+                  "date": {"type": "every_day"}, 
                   "time": {"type": "every_hour", "interval": 1}
               }
       }

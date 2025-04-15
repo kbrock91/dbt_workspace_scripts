@@ -1,7 +1,7 @@
 import requests
 
 # Configuration
-NEW_GIT_ORG_REPO= '<org>/<repo>'
+NEW_GIT_ORG_REPO= '<org>/<repo>' #e.g. 'kbrock91/dbt-workspace-scripts'
 API_BASE_URL = 'https://cloud.getdbt.com/api/v3'
 DBT_CLOUD_ACCOUNT_ID = ''
 DBT_CLOUD_PROJECT_ID = ''

@@ -1,7 +1,7 @@
 import requests
 
 # Configuration
-NEW_GIT_ORG_REPO= 'sam-dbt-labs/medstar_demo'
+NEW_GIT_ORG_REPO= '<org>/<repo>'
 API_BASE_URL = 'https://cloud.getdbt.com/api/v3'
 DBT_CLOUD_ACCOUNT_ID = ''
 DBT_CLOUD_PROJECT_ID = ''
